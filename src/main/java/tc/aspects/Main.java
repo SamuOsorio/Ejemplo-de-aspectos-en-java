@@ -26,16 +26,21 @@ import tc.aspects.domain.GestorBiblioteca;
  */
 
 public class Main {
+	public static void main(String[] args) {
+		// Primera parte: Probando la clase GestorBiblioteca (sin anotaciones)
+		System.out.println("\n=== PROBANDO PRIMERA PARTE (Interceptor de ejecuciones) ===\n");
+		GestorBiblioteca gestor = new GestorBiblioteca("puj", 100, 30000000);
+		gestor.abrirBiblioteca();
+		gestor.agregarLibros(10);
+		gestor.prestarLibro("El libro troll", true, 10);
+		gestor.procesarDevoluciones(new int[]{1,2,3,4,5,6});
+		gestor.calcularDistribucionPresupuesto(0.5);
 
-
-    public static void main(String[] args) {
-    
-    GestorBiblioteca gestor = new GestorBibioteca("puj", 100, 30000000);
-    gestor.abrirBiblioteca();
-    gestor.agregarLibros(10);
-    gestor.prestarLibro("El libro troll", true, 10);
-    gestor.procesarDevoluciones(new int[]{1,2,3,4,5,6});
-    gestor.calcularDistribucionPresupuesto(0.5);
-    
-    }
+		// Segunda parte: Probando CatalogoLibros (anotada a nivel de clase con @Logging)
+		System.out.println("\n=== PROBANDO SEGUNDA PARTE (Interceptor con @Logging) ===\n");
+		CatalogoLibros catalogo = new CatalogoLibros();
+		catalogo.buscarPorAutor("Gabriel García Márquez");
+		catalogo.agregarCategoria("Ciencia Ficción", 15);
+		catalogo.obtenerEstadisticas();
+	}
 }
