@@ -30,7 +30,7 @@ public class Main {
 
     public static void main(String[] args) {
     
-    GestorBiblioteca gestor = new GestorBibioteca("puj", 100, 30000000);
+    GestorBiblioteca gestor = new GestorBiblioteca("puj", 100, 30000000);
     gestor.abrirBiblioteca();
     gestor.agregarLibros(10);
     gestor.prestarLibro("El libro troll", true, 10);
