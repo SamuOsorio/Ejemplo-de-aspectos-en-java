@@ -1,4 +1,4 @@
-package tc.aspects.domain;
+package tc.aspects;
 
 import tc.aspects.annotations.Logging;
 import java.util.HashMap;
